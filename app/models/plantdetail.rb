@@ -1,0 +1,2 @@
+class Plantdetail < ApplicationRecord
+end
