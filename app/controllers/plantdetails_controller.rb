@@ -43,7 +43,7 @@ class PlantdetailsController < ApplicationController
   private
 
   def plantdetails_params
-  	params.require(:plantdetail).permit(:user_id, :plant_name, :problems, :diffcuilty)
+  	params.require(:plantdetail).permit(:user_id, :plant_name, :problems, :diffcuilty, :seed_date, :sprout_date, :flower_date, :harvest_date)
   end
 
 

@@ -27,7 +27,25 @@
     <%= form.text_area :problems %>
   </div>
 
-  <%= form.date_select(:plant_name, :order => [:month, :day, :year]) %>
+  <div class="field">
+    <%= form.label :seeded_date %>
+    <%= form.date_select(:seed_date, :order => [:month, :day, :year]) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sprouted_date %>
+    <%= form.date_select(:sprout_date, :order => [:month, :day, :year]) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :flower_date %>
+    <%= form.date_select(:flower_date, :order => [:month, :day, :year]) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Harvested_at %>
+    <%= form.date_select(:harvest_date, :order => [:month, :day, :year]) %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
