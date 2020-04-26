@@ -1,2 +1,9 @@
-<h1>Home#dashboard</h1>
-<p>Find me in app/views/home/dashboard.html.erb</p>
+<h1>this is user dahboard</h1>
+<%= current_user.email %><br>
+
+<% @plant.each do |plant| %>
+	<%= plant.plant_name %><br>
+	<%= link_to "edit", edit_plantdetail_path(plant) %><br>
+<% end %>
+<br>
+<%= link_to "create plantdetails", new_plantdetail_path %>

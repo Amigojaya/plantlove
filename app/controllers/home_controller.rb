@@ -8,5 +8,6 @@ class HomeController < ApplicationController
   end
 
   def dashboard
+  	@plant = current_user.plantdetails
   end
 end

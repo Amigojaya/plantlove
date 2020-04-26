@@ -1,2 +1,35 @@
-<h1>Plantdetails#new</h1>
-<p>Find me in app/views/plantdetails/new.html.erb</p>
+<h1>Create new plant details</h1>
+<%= form_for @plant do |form| %>
+  <% if @plant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plant.errors.count, "error") %> prohibited this plantdetail from being saved:</h2>
+
+      <ul>
+        <% @plant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :plant_name %>
+    <%= form.text_field :plant_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :diffcuilt %>
+    <%= form.text_field :diffcuilty %>
+  </div>
+
+  <div class="field">
+    <%= form.label :problems %>
+    <%= form.text_area :problems %>
+  </div>
+
+  <%= form.date_select(:plant_name, :order => [:month, :day, :year]) %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
