@@ -1,53 +1,55 @@
-<h1>Create new plant details</h1>
-<%= form_for @plant do |form| %>
-  <% if @plant.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@plant.errors.count, "error") %> prohibited this plantdetail from being saved:</h2>
+<div class="container">
+  <h1>Create new plant details</h1>
+  <%= form_for @plant do |form| %>
+    <% if @plant.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@plant.errors.count, "error") %> prohibited this plantdetail from being saved:</h2>
 
-      <ul>
-        <% @plant.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% @plant.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :plant_name %>
+      <%= form.text_field :plant_name %>
+    </div>
+
+    <div class="field">
+      <%= form.label :diffcuilt %>
+      <%= form.text_field :diffcuilty %>
+    </div>
+
+    <div class="field">
+      <%= form.label :problems %>
+      <%= form.text_area :problems %>
+    </div>
+
+    <div class="field">
+      <%= form.label :seeded_date %>
+      <%= form.date_select(:seed_date, :prompt => true) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :sprouted_date %>
+      <%= form.date_select(:sprout_date, :prompt => true) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :flower_date %>
+      <%= form.date_select(:flower_date, :prompt => true) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :Harvested_at %>
+      <%= form.date_select(:harvest_date, :prompt => true) %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :plant_name %>
-    <%= form.text_field :plant_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :diffcuilt %>
-    <%= form.text_field :diffcuilty %>
-  </div>
-
-  <div class="field">
-    <%= form.label :problems %>
-    <%= form.text_area :problems %>
-  </div>
-
-  <div class="field">
-    <%= form.label :seeded_date %>
-    <%= form.date_select(:seed_date, :order => [:month, :day, :year]) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sprouted_date %>
-    <%= form.date_select(:sprout_date, :order => [:month, :day, :year]) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :flower_date %>
-    <%= form.date_select(:flower_date, :order => [:month, :day, :year]) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Harvested_at %>
-    <%= form.date_select(:harvest_date, :order => [:month, :day, :year]) %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

@@ -37,6 +37,8 @@ class PlantdetailsController < ApplicationController
 
   def destroy
   	@plant = current_user.plantdetails.find(params[:id])
+    @plant.destroy
+    redirect_to root_path
   end
 
 
