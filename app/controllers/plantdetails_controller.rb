@@ -1,4 +1,5 @@
 class PlantdetailsController < ApplicationController
+  before_action :authenticate_user!
   def index
   	@plants = Plantdetails.all
   end

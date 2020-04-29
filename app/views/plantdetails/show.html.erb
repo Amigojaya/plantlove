@@ -1,4 +1,32 @@
 <div class="container">
-	<h1>Plantdetails#show</h1>
-	<p>Find me in app/views/plantdetails/show.html.erb</p>
+	<h1><%= @plant.plant_name %></h1>
+	
+	<div>
+		Plant/Tree name - <%= @plant.plant_name %>
+	</div>
+
+	<div>
+		Plant Diffcuilty - <%= @plant.diffcuilty %>
+	</div>
+
+	<div>
+		Plant Problems - <%= @plant.problems %>
+	</div>
+
+	<div>
+		Plant seeded date - <%= @plant.seed_date %>
+	</div>
+
+	<div>
+		Plant sprouted date - <%= @plant.sprout_date %>
+	</div>
+
+	<div>
+		Plant flower date - <%= @plant.flower_date %>
+	</div>
+
+	<div>
+		Plant Harvest date - <%= @plant.harvest_date %>
+	</div>
+
 </div>

@@ -10,22 +10,26 @@
   <tbody>
   	<% @plant.each do |plant| %>
 	    <tr>
-	      <td><%= link_to plant.plant_name, edit_plantdetail_path(plant)  %></td>
+	      <td><%= link_to plant.plant_name, plantdetail_path(plant)  %></td>
 	      <td><%= plant.diffcuilty %></td>
 	      <td><%= plant.created_at %></td>
 	      <td>
 	      	
 	      	<strong><%= link_to "Edit", edit_plantdetail_path(plant) %></strong>
 
-	      	<strong><%= link_to "Delete", plant, class: 'text-danger', data: { toggle: 'modal', target: '#exampleModalCenter' }   %></strong>
+	      	<strong>
+	      		<span type="button" class="text-danger" 
+         data-toggle="modal" data-target="#exampleModal<%= plant.id %>">
+     		Delete</span>
+    		</strong>
 
 				<!-- Modal -->
-				<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				<div class="modal fade" id="exampleModal<%= plant.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog modal-dialog-centered" role="document">
 				    <div class="modal-content">
-				      <div class="modal-header">
-				        <h5 class="modal-title" id="exampleModalLongTitle">Delete</h5>
-				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				      <div class="modal-header bg-danger">
+				        <h5 class="modal-title text-white" id="exampleModalLongTitle">Delete</h5>
+				        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
 				          <span aria-hidden="true">&times;</span>
 				        </button>
 				      </div>
@@ -34,7 +38,7 @@
 				      </div>
 				      <div class="modal-footer">
 				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				        <%= link_to 'delete' , plant, method: :delete, class: "btn btn-danger" %>
+				        <%= link_to "Delete" , plant, method: :delete, class: "btn btn-danger" %>
 				      </div>
 				    </div>
 				  </div>
