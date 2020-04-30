@@ -1,32 +1,55 @@
 <div class="container">
-	<h1><%= @plant.plant_name %></h1>
-	
-	<div>
+	<h1><center><%= @plant.plant_name %></center></h1>
+	<hr>
+	<div class="ml-2 mt-3">
 		Plant/Tree name - <%= @plant.plant_name %>
 	</div>
 
-	<div>
-		Plant Diffcuilty - <%= @plant.diffcuilty %>
+	<div class="ml-2 mt-3">
+		Diffcuilty - <%= @plant.diffcuilty %>
 	</div>
 
-	<div>
-		Plant Problems - <%= @plant.problems %>
+	<div class="ml-2 mt-3">
+		Problems - <%= @plant.problems %>
 	</div>
 
-	<div>
-		Plant seeded date - <%= @plant.seed_date %>
+	<div class="ml-2 mt-3">
+		Seeded date - <% if @plant.seed_date == nil %>
+							 <span class="text-secondary">Not yet seeded, Strat seeding or planting because plants loves humans!</span>
+							 <% else %>
+							 <span><%= @plant.seed_date %></span>
+							 <% end %>
 	</div>
 
-	<div>
-		Plant sprouted date - <%= @plant.sprout_date %>
+	<div class="ml-2 mt-3">
+		Sprouted date - <% if @plant.sprout_date == nil %>
+							 <span class="text-secondary">Not sprouted yet</span>
+							 <% else %>
+							 <span><%= @plant.sprout_date %></span>
+							 <% end %>
 	</div>
 
-	<div>
-		Plant flower date - <%= @plant.flower_date %>
+	<div class="ml-2 mt-3">
+		Harvest date - <% if @plant.harvest_date == nil %>
+							 <span class="text-secondary">Not harvested yet</span>
+							 <% else %>
+							 <span><%= @plant.harvest_date %></span>
+							 <% end %>
 	</div>
 
-	<div>
-		Plant Harvest date - <%= @plant.harvest_date %>
+	<div class="ml-2 mt-3">
+		Flower date - <% if @plant.flower_date == nil %>
+							 <span class="text-secondary">Not Flowered yet</span>
+							 <% else %>
+							 <span><%= @plant.flower_date %></span>
+							 <% end %>
+	</div>
+
+	<div class="ml-2 mt-5 ">
+		<center>
+		<%= link_to "Edit", edit_plantdetail_path(@plant), class:"btn btn-info" %>
+		<%= link_to "Back",  home_dashboard_path, class:"btn btn-secondary" %>
+		</center>
 	</div>
 
 </div>

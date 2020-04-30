@@ -1,5 +1,6 @@
 <div class="container">
-  <h1>Create new plant details</h1>
+  <h1><center>Edit <%= @plant.plant_name %></center></h1>
+  <hr>
   <%= form_for @plant do |form| %>
     <% if @plant.errors.any? %>
       <div id="error_explanation">
@@ -13,43 +14,49 @@
       </div>
     <% end %>
 
-    <div class="field">
+    <div class="field my-2">
       <%= form.label :plant_name %>
-      <%= form.text_field :plant_name %>
+      <%= form.text_field :plant_name, class: "form-control" %>
     </div>
 
-    <div class="field">
+    <div class="field my-2">
       <%= form.label :diffcuilt %>
-      <%= form.text_field :diffcuilty %>
+      <%= form.text_field :diffcuilty, class: "form-control" %>
     </div>
 
-    <div class="field">
+    <div class="field my-2">
       <%= form.label :problems %>
-      <%= form.text_area :problems %>
+      <%= form.text_area :problems, class: "form-control",  rows: "5" %>
     </div>
-
-    <div class="field">
-      <%= form.label :seeded_date %>
+    <center>
+    <div class="field mb-2 mt-4 ">
+      <%= form.label :seeded_date %> 
       <%= form.date_select(:seed_date, :prompt => true) %>
     </div>
 
-    <div class="field">
+    <div class="field my-2">
       <%= form.label :sprouted_date %>
       <%= form.date_select(:sprout_date, :prompt => true) %>
     </div>
 
-    <div class="field">
-      <%= form.label :flower_date %>
-      <%= form.date_select(:flower_date, :prompt => true) %>
-    </div>
-
-    <div class="field">
+    <div class="field my-2">
       <%= form.label :Harvested_at %>
       <%= form.date_select(:harvest_date, :prompt => true) %>
     </div>
 
-    <div class="actions">
-      <%= form.submit %>
+    <div class="field my-2">
+      <%= form.label :flower_date %>
+      <%= form.date_select(:flower_date, :prompt => true) %>
     </div>
+  </center>
+
+    <div class="actions">
+      <center>
+      <%= form.submit "Update changes", class: "btn btn-success mb-3" %>
+    </center>
+    </div>
+
+
+
   <% end %>
 </div>
