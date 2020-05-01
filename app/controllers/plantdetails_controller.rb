@@ -42,6 +42,10 @@ class PlantdetailsController < ApplicationController
     redirect_to root_path
   end
 
+  def manage 
+    @plant = current_user.plantdetails
+  end
+
 
   private
 

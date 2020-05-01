@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'plantdetails/new'
   get 'plantdetails/edit'
   get 'plantdetails/show'
+  get 'plantdetails/manage', to: 'plantdetails#manage', as: 'manage_details'
   root 'home#index'
   get 'home/dashboard'
   devise_for :users

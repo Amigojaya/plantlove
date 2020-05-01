@@ -1,18 +1,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">Plant</th>
+      <th scope="col">Plant(<%= current_user.plantdetails.count %>)</th>
       <th scope="col">Diffcuilty</th>
-      <th scope="col">Created Date</th>
+      <th scope="col">Created </th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
   	<% @plant.each do |plant| %>
 	    <tr>
-	      <td><%= link_to plant.plant_name, plantdetail_path(plant)  %></td>
-	      <td><%= plant.diffcuilty %></td>
-	      <td><%= plant.created_at %></td>
+	      <td><%= link_to plant.plant_name.upcase, plantdetail_path(plant)  %></td>
+	      <td><%= plant.diffcuilty.upcase %></td>
+	      <td><%= plant.created_at.strftime("%a, %B %e, %Y") %></td>
 	      <td>
 	      	
 	      	<strong><%= link_to "Edit", edit_plantdetail_path(plant) %></strong>

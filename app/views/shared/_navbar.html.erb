@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light ">
   <%= link_to "Plantlove", root_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -7,25 +7,35 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <%= link_to "Home", root_path, class: "nav-link" %>
       </li>
+      <% if current_user %>
+      <li class="nav-item active">
+        <%= link_to "Manage", manage_details_path, class: "nav-link" %>
+      </li>
+      <% end %>
     </ul>
   </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <% if !current_user %>
+      <li>
+        <span class="mr-2 mb-1"><%= link_to "Log-in", new_user_session_path, class: "btn btn-outline-success text-dark" %></span> || <span class="mx-2 "><%= link_to "Register", new_user_registration_path, class: "btn btn-outline-warning text-dark" %></span>
       </li>
+      <li>
+        
+      </li>
+      <% end %>
       <li class="nav-item dropdown">
+        <% if current_user %>
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          <%= current_user.email %>
         </a>
+        <% end %>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
            <% if current_user %>
            <%= link_to "Edit details", edit_user_registration_path(current_user), class: "dropdown-item" %>
             <%= link_to "logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          <% else %>
-            <%= link_to "log-in", new_user_session_path, class: "dropdown-item" %>
           <% end %>
       </li>
     </ul>

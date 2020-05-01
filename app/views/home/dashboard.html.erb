@@ -3,8 +3,34 @@
 	<% if current_user.plantdetails.count == 0 %>
 		<h4 class="text-center text-secondary">You don't have any plant details Create one now!!</h4>
 	<% else %>
-		<%= render 'shared/table'%>
 	<%  end %>
-	<%= link_to "+create plantdetails", new_plantdetail_path, class: "btn btn-info mt-2" %>
+	<%= link_to "+create plantdetails", new_plantdetail_path, class: "btn btn-info btn-block mt-2" %>
+
+
+<div class="row mt-3">
+	<% @plant.each do |plant| %>
+	<div class="ml-3 col-11 col-lg-5">
+		<div class="card border-warning mb-3 text-center ">
+		  <div class="card-header bg-warning">
+		    <strong><%= plant.plant_name.upcase %></strong>
+		  </div>
+		  <div class="card-body bg-light">
+		    <p class="card-text">Diffcuilty - <%= plant.diffcuilty %></p>
+		    <p class="card-text">Problems - <%= plant.problems[0,10] %>..</p>
+		    <%= link_to "Show", plantdetail_path(plant), class: "btn btn-secondary" %>
+		  </div>
+
+		</div>
+		</div>
+		<% end %>
+</div>
 
 </div>
+<style >
+	.footer {
+	position: absolute;
+  bottom: 0;
+  width: 100%;
+	}
+</style>
+

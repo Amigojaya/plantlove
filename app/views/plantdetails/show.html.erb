@@ -17,7 +17,7 @@
 		Seeded date - <% if @plant.seed_date == nil %>
 							 <span class="text-secondary">Not yet seeded, Strat seeding or planting because plants loves humans!</span>
 							 <% else %>
-							 <span><%= @plant.seed_date %></span>
+							 <span><%= @plant.seed_date.strftime("%A, %B %e, %Y") %></span>
 							 <% end %>
 	</div>
 
@@ -25,7 +25,7 @@
 		Sprouted date - <% if @plant.sprout_date == nil %>
 							 <span class="text-secondary">Not sprouted yet</span>
 							 <% else %>
-							 <span><%= @plant.sprout_date %></span>
+							 <span><%= @plant.sprout_date.strftime("%A, %B %e, %Y") %></span>
 							 <% end %>
 	</div>
 
@@ -33,7 +33,7 @@
 		Harvest date - <% if @plant.harvest_date == nil %>
 							 <span class="text-secondary">Not harvested yet</span>
 							 <% else %>
-							 <span><%= @plant.harvest_date %></span>
+							 <span><%= @plant.harvest_date.strftime("%A, %B %e, %Y") %></span>
 							 <% end %>
 	</div>
 
@@ -41,15 +41,47 @@
 		Flower date - <% if @plant.flower_date == nil %>
 							 <span class="text-secondary">Not Flowered yet</span>
 							 <% else %>
-							 <span><%= @plant.flower_date %></span>
+							 <span><%= @plant.flower_date.strftime("%A, %B %e, %Y") %></span>
 							 <% end %>
 	</div>
 
 	<div class="ml-2 mt-5 ">
 		<center>
 		<%= link_to "Edit", edit_plantdetail_path(@plant), class:"btn btn-info" %>
-		<%= link_to "Back",  home_dashboard_path, class:"btn btn-secondary" %>
+		<span type="button" class="btn btn-danger" 
+         data-toggle="modal" data-target="#exampleModal">
+     		Delete</span>
+     	<%= link_to "Back",  home_dashboard_path, class:"btn btn-secondary" %>
 		</center>
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header bg-danger">
+		        <h5 class="modal-title text-white" id="exampleModalLongTitle">Delete</h5>
+		        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        Are you sure to delete <span class="text-danger"><strong><%= @plant.plant_name %></strong></span> Plant details?
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		        <%= link_to "Delete" , @plant, method: :delete, class: "btn btn-danger" %>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
 	</div>
 
 </div>
+<style >
+	.footer {
+	position: absolute;
+  bottom: 0;
+  width: 100%;
+	}
+</style>

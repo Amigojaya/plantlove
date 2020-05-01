@@ -6,6 +6,7 @@ class HomeController < ApplicationController
   	end
 
   end
+  
 
   def dashboard
   	@plant = current_user.plantdetails

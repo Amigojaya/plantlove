@@ -7,4 +7,6 @@ class User < ApplicationRecord
 
   has_many :plantdetails
 
+  validates :email, uniqueness: true
+
 end
