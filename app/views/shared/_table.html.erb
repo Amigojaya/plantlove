@@ -10,8 +10,8 @@
   <tbody>
   	<% @plant.each do |plant| %>
 	    <tr>
-	      <td><%= link_to plant.plant_name.upcase, plantdetail_path(plant)  %></td>
-	      <td><%= plant.diffcuilty.upcase %></td>
+	      <td><%= link_to plant.plant_name.camelcase, plantdetail_path(plant)  %></td>
+	      <td><%= plant.diffcuilty.camelcase %></td>
 	      <td><%= plant.created_at.strftime("%a, %B %e, %Y") %></td>
 	      <td>
 	      	

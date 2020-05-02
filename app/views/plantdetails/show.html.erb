@@ -1,8 +1,8 @@
 <div class="container">
-	<h1><center><%= @plant.plant_name %></center></h1>
+	<h1><center><%= @plant.plant_name.camelcase %></center></h1>
 	<hr>
 	<div class="ml-2 mt-3">
-		Plant/Tree name - <%= @plant.plant_name %>
+		Plant/Tree name - <%= @plant.plant_name.camelcase %>
 	</div>
 
 	<div class="ml-2 mt-3">
@@ -10,7 +10,7 @@
 	</div>
 
 	<div class="ml-2 mt-3">
-		Problems - <%= @plant.problems %>
+		Problems - <%= @plant.problems.camelcase %>
 	</div>
 
 	<div class="ml-2 mt-3">
@@ -80,6 +80,6 @@
 </div>
   <style >
  .neat {
-  min-height: calc(100vh - 140px);
+  min-height: calc(100vh - 120px);
  }
 </style>

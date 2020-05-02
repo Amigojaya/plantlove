@@ -1,5 +1,5 @@
 <div class="container">
-	<h3 class="my-3 ml-3">Welcome <%= current_user.email %> </h3>
+	<h3 class="my-3 ml-3">Welcome <%= current_user.email.camelcase %> </h3>
 	<% if current_user.plantdetails.count == 0 %>
 		<h4 class="text-center text-secondary">You don't have any plant details Create one now!!</h4>
 	<% else %>
