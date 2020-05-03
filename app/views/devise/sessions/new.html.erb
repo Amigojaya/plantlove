@@ -1,9 +1,16 @@
-
-  <h2 class="text-center">Log in</h2>
+<% flash.each do |name, msg| %>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <center><%= msg %></center>
+  </div>
+<% end %>
+<h2 class="text-center">Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="container">
-      <span class="text-danger mx-5"><center><h5><%= alert %></h5></center></span>
+    
     <div class="row">
       <div class="col-lg-4"></div>
       <div class="col-lg-4 mx-2">

@@ -14,5 +14,13 @@
     <%= render partial: '/shared/navbar' %>
     <div class="neat"><%= yield %></div>
     <%= render partial: 'shared/footer' %>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script >
+      window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 2500);
+    </script>
   </body>
 </html>

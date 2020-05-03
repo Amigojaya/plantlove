@@ -11,7 +11,7 @@ class PlantdetailsController < ApplicationController
   def create
   	@plant = current_user.plantdetails.build(plantdetails_params)
   	if @plant.save
-  		redirect_to root_path
+  		redirect_to root_path, success: "Plantdetails successfully created"
   	else
   		render 'new'
   	end
@@ -25,7 +25,7 @@ class PlantdetailsController < ApplicationController
   def update
   	@plant = current_user.plantdetails.find(params[:id])
   	if @plant.update(plantdetails_params)
-  		redirect_to root_path
+  		redirect_to root_path, success: "Plantdetails successfully Updated"
   	else
   		render 'edit'
   	end
@@ -39,7 +39,7 @@ class PlantdetailsController < ApplicationController
   def destroy
   	@plant = current_user.plantdetails.find(params[:id])
     @plant.destroy
-    redirect_to root_path
+    redirect_to root_path, danger: "Plantdetails successfully Deleted"
   end
 
   def manage 

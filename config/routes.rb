@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'plantdetails/manage', to: 'plantdetails#manage', as: 'manage_details'
   root 'home#index'
   get 'home/dashboard'
-  devise_for :users
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
   resources :plantdetails
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
