@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'plantdetails/edit'
   get 'plantdetails/show'
   get 'plantdetails/manage', to: 'plantdetails#manage', as: 'manage_details'
+  get '/about_me', to: 'home#about_me', as: 'about_me'
   root 'home#index'
   get 'home/dashboard'
   devise_for :users, controllers: {

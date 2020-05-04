@@ -1,0 +1,105 @@
+<div class="container">
+<h1 class="ml-5 mt-3 mb-2">About me </h1>
+
+<div class="row mt-2">
+	<div class="col-12 col-lg-4">
+		<center><%= image_tag("myphotos.jpg", :width => 200,style: "border-radius: 50%", :alt => "Nature Image") %></center>
+	</div>
+	<div class="col-12 col-lg-8 mt-2 pt-1">
+		
+			Hi there! My name is <strong>Jaya Mouli</strong>, I am a B.tech graduate and currently doing M.tech in Computer Science course.<br><br>
+			<strong>Beginner</strong> in Coding/Web Technologies kind of loving it.<br><br>
+			I also love <strong>Nature</strong> because it  test our patience. With-out Mother Earth we can't even breath<br><br>
+			Nothing much about me,I am scratching my head for half an hour to get this small paragraph :)	
+	</div>
+</div>
+
+	<div class="position">
+		<%= image_tag 'social_icons/i2.png', class: "img1 ", width: "40px" %>
+		<a href="https://www.instagram.com/jaya_mouli/"><%= image_tag 'social_icons/i1.png', class: "hover-img", width: "40px" %></a>
+	</div>
+
+
+	
+	<div class="mt-5">
+		<h1 class="text-center text-info">Some of my Nature Photos</h1>
+	</div>
+
+	<div class="row">
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-12 mb-4">
+
+        
+        <%= image_tag 'about_me/4.jpeg', class: "img-fluid mb-4" %>
+
+        <%= image_tag 'about_me/2.JPG', class: "img-fluid mb-4" %>
+
+        <%= image_tag 'about_me/5.jpeg', class: "img-fluid mb-4" %>
+        
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4">
+
+        <%= image_tag 'about_me/14.jpeg', class: "img-fluid mb-4" %>
+
+        <%= image_tag 'about_me/13.jpg', class: "img-fluid mb-4", :'data-wow-delay' => "0.3s" %>
+
+        <%= image_tag 'about_me/15.jpg', class: "img-fluid mb-4" %>
+
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-6 mb-4">
+
+        <%= image_tag 'about_me/1.JPG', class: "img-fluid mb-4" %>
+
+        <%= image_tag 'about_me/11.jpeg', class: "img-fluid mb-4" %>
+
+        <%= image_tag 'about_me/6.jpg', class: "img-fluid mb-4" %>
+
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+
+</div>
+<style >
+ .neat {
+  min-height: calc(100vh - 120px);
+ }
+
+ .position{
+ 	position: relative;
+ 	display: inline-block;
+ 	overflow: hidden;
+ }
+
+ img {
+ 	transition: all linear 0.2s;
+ }
+
+ img.hover-img{
+ 	position: absolute;
+ 	opacity: 0;
+ 	top: 0;
+ 	left: 0;
+ }
+
+ .position:hover img{
+ 	opacity: 0;
+ }
+
+ .position:hover img.hover-img{
+ 	opacity: 1;
+ }
+
+</style>
+
+

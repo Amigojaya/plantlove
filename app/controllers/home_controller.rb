@@ -11,4 +11,8 @@ class HomeController < ApplicationController
   def dashboard
   	@plant = current_user.plantdetails
   end
+
+  def about_me
+
+  end
 end
