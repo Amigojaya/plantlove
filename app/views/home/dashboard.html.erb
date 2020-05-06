@@ -5,6 +5,7 @@
 		<h4 class="text-center text-secondary">You don't have any plant details Create one now!!</h4>
 	<% else %>
 	<%  end %>
+	<h6 class="ml-5 mb-3"><%= link_to "How to use this", how_it_works_path %></h6>
 	<%= link_to "+create plantdetails", new_plantdetail_path, class: "btn btn-info btn-block mt-2" %>
 
 

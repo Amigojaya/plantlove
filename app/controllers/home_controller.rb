@@ -15,4 +15,8 @@ class HomeController < ApplicationController
   def about_me
 
   end
+
+  def how_it_works
+  end
+
 end
