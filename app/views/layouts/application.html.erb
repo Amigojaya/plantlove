@@ -8,7 +8,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
   </head>
 
@@ -17,7 +17,7 @@
     <div class="neat"><%= yield %></div>
     <%= render partial: 'shared/footer' %>
     <script >
-      document.addEventListener("DOMContentLoaded", function(event) { 
+     $(document).on('ready', function () { 
           window.setTimeout(function() {
             $(".alert").fadeTo(500, 0).slideUp(500, function(){
                 $(this).remove(); 
