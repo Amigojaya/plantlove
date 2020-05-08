@@ -37,4 +37,3 @@ yarn-debug.log*
 
 /.env
 
-/config/environments/production.rb
