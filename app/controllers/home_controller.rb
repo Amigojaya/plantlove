@@ -19,4 +19,15 @@ class HomeController < ApplicationController
   def how_it_works
   end
 
+  def admin
+    if current_user.admin?
+      @user = User.all
+    else
+      redirect_to root_path
+    end
+  end
+
+
+   
+
 end

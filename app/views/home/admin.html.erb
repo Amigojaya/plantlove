@@ -1,0 +1,29 @@
+ <div class="container">
+ 	<h1>Users - <%= @user.count %></h1>
+ 	<table class="table">
+	  <thead class="thead-dark">
+	    <tr>
+	      <th scope="col">Email</th>
+	      <th scope="col">created at</th>
+	      <th scope="col">confirmed ?</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  	<% @user.each do |user| %>
+	    <tr>
+	      <td><%= user.email %><br></td>
+	      <td><%= user.created_at.strftime("%I:%M %p | %a, %d,%b, %Y") %><br></td>
+	      <td><%= user.confirmed_at.blank? %><br></td>
+	    </tr>
+	  </tbody>
+	  <% end %>
+	</table>
+
+	
+ </div>
+
+ <style >
+ .neat {
+  min-height: calc(100vh - 140px);
+ }
+</style>

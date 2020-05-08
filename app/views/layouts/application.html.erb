@@ -14,13 +14,26 @@
   <body>
     <%= render partial: '/shared/navbar' %>
     <div class="neat"><%= yield %></div>
+    <% if current_user && current_user.admin? %>
+    <div>
+      <button type="button" class="btn btn-danger btn-sm btn-disabled admin">ADMIN</button>
+    </div>
+    <% end %>
     <%= render partial: 'shared/footer' %>
     <script >
           window.setTimeout(function() {
             $(".alert").fadeTo(500, 0).slideUp(500, function(){
                 $(this).remove(); 
             });
-        }, 2500);
+        }, 5000);
     </script>
+    <style>
+      .admin {
+        position: fixed;
+        z-index: 999;
+        right: 0;
+        top: 115px;
+      }
+    </style>
   </body>
 </html>
