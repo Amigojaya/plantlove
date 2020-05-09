@@ -25,7 +25,7 @@ class HomeController < ApplicationController
 
   def admin
     if current_user.admin?
-      @user = User.all
+      @user = User.all.order(id: "desc")
     else
       redirect_to root_path
     end

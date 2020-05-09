@@ -3,6 +3,7 @@
  	<table class="table">
 	  <thead class="thead-dark">
 	    <tr>
+	      <th scope="col">#</th>
 	      <th scope="col">Email</th>
 	      <th scope="col">created at</th>
 	      <th scope="col">confirmed ?</th>
@@ -11,14 +12,15 @@
 	  <tbody>
 	  	<% @user.each do |user| %>
 	    <tr>
+	      <td><%= user.id %><br></td>
 	      <td><%= user.email %><br></td>
 	      <td><%= user.created_at.strftime("%I:%M %p | %a, %d,%b, %Y") %><br></td>
 	      <td>
 	      	<% if user.confirmed_at.blank? %>
-	      		Not-Confirmed
+	      		<span class="text-danger">Not-Confirmed</span>
 	      	<% else
 	      		 %>
-	      		Confirmed
+	      		<span class="text-success">Confirmed</span>
 	        <% end %> 
 	      	<br></td>
 	    </tr>
