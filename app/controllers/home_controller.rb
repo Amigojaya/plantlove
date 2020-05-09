@@ -9,7 +9,11 @@ class HomeController < ApplicationController
   
 
   def dashboard
-  	@plant = current_user.plantdetails
+    if current_user
+  	   @plant = current_user.plantdetails
+    else
+      redirect_to new_user_session_path,  notice: "Please log-in to access"
+    end
   end
 
   def about_me

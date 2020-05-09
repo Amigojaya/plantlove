@@ -13,7 +13,14 @@
 	    <tr>
 	      <td><%= user.email %><br></td>
 	      <td><%= user.created_at.strftime("%I:%M %p | %a, %d,%b, %Y") %><br></td>
-	      <td><%= user.confirmed_at.blank? %><br></td>
+	      <td>
+	      	<% if user.confirmed_at.blank? %>
+	      		Not-Confirmed
+	      	<% else
+	      		 %>
+	      		Confirmed
+	        <% end %> 
+	      	<br></td>
 	    </tr>
 	  </tbody>
 	  <% end %>
