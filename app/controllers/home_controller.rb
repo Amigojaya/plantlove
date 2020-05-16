@@ -31,6 +31,14 @@ class HomeController < ApplicationController
     end
   end
 
+  def progress
+    if current_user.admin?
+      @width = 99
+    else
+      redirect_to root_path
+    end
+  end
+
 
    
 
