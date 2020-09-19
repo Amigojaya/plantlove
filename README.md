@@ -1,24 +1,7 @@
-# README
+# Plant Love
+This website/Web application is build using Ruby on rails framework and bootstrap css library for styling.
+This is my first deployed website ever , i learnt a lot.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Web application is used to save your plants/trees details , you can go through the live hosted app using Heroku , by this link - http://plantlovers.herokuapp.com/home/dashboard
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
